@@ -1,7 +1,7 @@
 
 
 ### This repository contains four distinct technical projects, ranging from Retrieval-Augmented Generation (RAG) and Agentic AI to Dynamic Programming and Web Visualizations.
-
+### SEPARATE READ ME IS ALSO THERE FOR EAH PROJECT
 ---
 
 ## 🚀 Projects Overview
