@@ -1,6 +1,6 @@
-# Portfolio: AI, Optimization & Web Engineering
 
-This repository contains four distinct technical projects, ranging from Retrieval-Augmented Generation (RAG) and Agentic AI to Dynamic Programming and Web Visualizations.
+
+### This repository contains four distinct technical projects, ranging from Retrieval-Augmented Generation (RAG) and Agentic AI to Dynamic Programming and Web Visualizations.
 
 ---
 
