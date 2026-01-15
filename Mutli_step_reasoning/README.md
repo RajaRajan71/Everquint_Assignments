@@ -1,22 +1,35 @@
-# Multi-Step Reasoning AI Agent with Self-Checking
+# Multi-Step Reasoning Agent with Self-Verification
 
-An advanced Generative AI agent designed to solve complex word problems by breaking them into logical steps, executing them, and verifying the output before presenting it to the user.
+## Overview
+This project implements a multi-step reasoning agent as required in the assignment.
+The agent follows a Planner → Executor → Verifier architecture with retry logic.
 
-## 🚀 The Challenge
-Standard LLMs often fail at multi-step logic (like complex math or scheduling) because they try to answer all at once. This project implements a **Planner-Executor-Verifier** architecture to ensure high accuracy and reliability.
+A mock LLM is used to simulate agent behavior. This is acceptable as per the assignment
+guidelines, which allow mock or rule-based implementations.
 
-## 🛠️ Key Features
-- **Agentic Workflow**: Uses a dedicated 'Planner' to outline steps and an 'Executor' to process them sequentially.
-- **Self-Correction (Verifier)**: A verification layer checks the final answer against the original constraints and triggers retries if errors are detected.
-- **Interactive Interface**: Integrated with **Gradio** for a real-time web UI where users can input logic puzzles.
-- **JSON Structured Output**: Ensures the agent's response is machine-readable, including the final answer, status, and internal reasoning logs.
+## Architecture
+- **Planner**: Generates a step-by-step plan without solving the problem.
+- **Executor**: Executes the plan internally and returns only the final answer.
+- **Verifier**: Independently verifies the answer and returns a pass/fail result.
 
-## 🧠 Architecture
-1. **Planner**: Breaks the input question into a numbered execution plan.
-2. **Executor**: Follows the plan exactly to calculate intermediate results.
-3. **Verifier**: Acts as a "supervisor" to approve the solution or explain logical inconsistencies for a retry.
+## How to Run
+1. Open the notebook (`.ipynb`) in Google Colab or Jupyter.
+2. Run all cells from top to bottom.
+3. Example questions and outputs are printed at the end of the notebook.
 
-## 🧪 Example Problems Solved
-- **Time/Logic**: Calculating journey durations (e.g., 14:30 to 18:05).
-- **Arithmetic**: Multi-step apple counts with variable multipliers.
-- **Constraints**: Finding available meeting slots within specific free-time windows.
+## Prompting Strategy
+Separate prompts are used for each agent:
+- Planner prompt ensures no solution is generated.
+- Executor prompt enforces hidden reasoning.
+- Verifier prompt performs independent verification and outputs structured JSON.
+
+## Example Runs
+The notebook includes 8 example questions:
+- 5 simple reasoning problems
+- 3 edge/tricky cases
+
+Each run demonstrates planning, execution, verification, retries, and final status.
+
+## Assumptions
+- The mock LLM is deterministic and rule-based for evaluation purposes.
+- Chain-of-thought reasoning is intentionally hidden to comply with safe prompting practices.
